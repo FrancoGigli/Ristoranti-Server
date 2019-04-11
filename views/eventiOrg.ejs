@@ -1,0 +1,34 @@
+<h1>LISTA EVENTI</h1>
+
+<head>
+  <style>
+  table, th {
+    border: 2px solid black;
+  }
+  </style>
+</head>
+
+<body>
+
+  <table style="width:100%">
+    <tr>
+      <th>Artista</th>
+      <th>Luogo</th>
+      <th>Data</th>
+      <th>Prezzo</th>
+    </tr>
+    <% eventiOrg.forEach(function(events)  { %>
+      <tr align="center">
+        <td><%= events.artista %><hr/></td>
+        <td><%= events.luogo %><hr/></td>
+        <td><%= events.data %><hr/></td>
+        <td><%= events.prezzo %> &euro;<hr/></td>
+        <td><%= events.compagnia %><hr/></td>
+      </tr>
+    <% }); %>
+  </table>
+
+  <H1>EVENTIORG</H1>
+  <button onclick="window.location.href='/addEvento';">Aggiungi Evento</button>
+
+</body>

@@ -1,0 +1,72 @@
+<h1>LISTA EVENTI</h1>
+
+<head>
+  <link rel="stylesheet" href="../../assets/styles/eventstyle.css" type="text/css">
+  <style>
+  table, th {
+    border: 2px solid black;
+  }
+  </style>
+</head>
+
+<body>
+
+  <table style="width:100%">
+    <tr>
+      <th>Artista</th>
+      <th>Luogo</th>
+      <th>Data e Ora</th>
+      <th>Prezzo</th>
+      <td align="center" style="font-weight:bold">Azione</td>
+    </tr>
+    <% eventi.forEach(function(events)  { %>
+      <tr align="center">
+        <td><hr/><%= events.artista %><hr/></td>
+        <td><hr/><%= events.luogo %><hr/></td>
+        <td><hr/><%= events.data %><hr/></td>
+        <td><hr/><%= events.prezzo %> &euro;<hr/></td>
+        <td style="display: block"><hr/><button id="prenotaBtn">Prenota!</button><hr/></td>
+      </tr>
+    <% }); %>
+  </table>
+
+  <div id="myModal" class="modal">
+
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Evento prenotato!</p>
+      </div>
+
+  </div>
+
+  <h1>YUP</h1>
+
+  <script>
+    // Get the modal
+    var modal = document.getElementById('myModal');
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("prenotaBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the button, open the modal
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
